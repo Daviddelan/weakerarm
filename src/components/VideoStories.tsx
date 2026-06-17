@@ -62,22 +62,23 @@ export function VideoStories() {
   }, [openIdx]);
 
   return (
-    <section id="videos" className="py-20 md:py-24 bg-cream-soft">
-      <div className="container-x">
-        <div className="text-center max-w-3xl mx-auto mb-14 md:mb-20">
-          <p className="text-sm font-medium tracking-[0.2em] uppercase text-navy/60 mb-6">
+    <section id="videos" className="relative py-14 md:py-20 lg:py-24 bg-gradient-to-b from-background via-cream-soft/30 to-background overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(59,130,246,0.06),transparent_60%)]" />
+      <div className="relative container-x">
+        <div className="text-center max-w-2xl mx-auto mb-10 md:mb-14">
+          <p className="text-sm font-medium tracking-[0.2em] uppercase text-navy/60 mb-5">
             Watch & Listen
           </p>
-          <h2 className="text-4xl md:text-6xl text-navy-deep leading-[1.05]">
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-navy-deep leading-[1.05]">
             Stories Behind the Vision
           </h2>
-          <p className="mt-6 text-lg text-navy/70">
+          <p className="mt-5 text-lg text-muted-foreground max-w-lg mx-auto">
             Conversations, films, and field stories from the people shaping education access.
           </p>
         </div>
 
         {/* Featured card */}
-        <div className="relative rounded-3xl overflow-hidden shadow-[0_30px_80px_-30px_rgba(15,23,42,0.45)] bg-navy-deep">
+        <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-navy-deep/20 bg-navy-deep">
           <button
             onClick={() => setOpenIdx(activeIdx)}
             className="group relative block w-full text-left cursor-pointer"
@@ -85,20 +86,20 @@ export function VideoStories() {
           >
             <div className="relative w-full aspect-[16/9] md:aspect-[21/9]">
               <Thumb id={active.id} className="transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/10" />
-              <div className="absolute inset-0 flex items-end md:items-center justify-between p-6 md:p-12 gap-6">
-                <div className="max-w-2xl">
-                  <p className="text-xs md:text-sm tracking-[0.2em] uppercase text-gold mb-3 md:mb-5">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/5" />
+              <div className="absolute inset-0 flex items-end md:items-center justify-between p-5 md:p-10 gap-5">
+                <div className="max-w-xl">
+                  <p className="text-xs md:text-sm tracking-[0.2em] uppercase text-gold mb-2 md:mb-3">
                     Featured Story
                   </p>
-                  <h3 className="font-display text-2xl md:text-5xl font-semibold text-cream leading-tight">
+                  <h3 className="font-display text-xl md:text-3xl lg:text-4xl font-semibold text-cream leading-tight">
                     {active.title}
                   </h3>
                 </div>
                 <span
-                  className="shrink-0 flex items-center justify-center rounded-full bg-gold text-navy-deep h-16 w-16 md:h-24 md:w-24 shadow-xl transition-transform duration-300 group-hover:scale-110"
+                  className="shrink-0 flex items-center justify-center rounded-full bg-gold text-navy-deep h-14 w-14 md:h-20 md:w-20 shadow-xl transition-transform duration-300 group-hover:scale-110"
                 >
-                  <Play className="h-7 w-7 md:h-10 md:w-10 fill-current ml-1" />
+                  <Play className="h-6 w-6 md:h-8 md:w-8 fill-current ml-0.5" />
                 </span>
               </div>
             </div>
@@ -106,25 +107,25 @@ export function VideoStories() {
         </div>
 
         {/* Thumbnail rail */}
-        <div className="mt-8 md:mt-10 -mx-6 px-6 py-3 overflow-x-auto overflow-y-hidden">
-          <ul className="flex gap-4 md:gap-5 snap-x snap-mandatory py-2">
+        <div className="mt-6 md:mt-8 -mx-4 px-4 py-2 overflow-x-auto overflow-y-hidden">
+          <ul className="flex gap-3 md:gap-4 snap-x snap-mandatory">
             {VIDEOS.map((v, i) => {
               const isActive = i === activeIdx;
               return (
-                <li key={v.id} className="snap-start shrink-0 w-56 md:w-64">
+                <li key={v.id} className="snap-start shrink-0 w-48 md:w-56">
                   <button
                     onClick={() => setActiveIdx(i)}
                     className={
                       "group block w-full text-left rounded-xl overflow-hidden transition-all duration-300 " +
                       (isActive
-                        ? "ring-4 ring-gold scale-[1.02]"
-                        : "ring-1 ring-navy/10 hover:ring-navy/30")
+                        ? "ring-2 ring-gold shadow-lg shadow-gold/20"
+                        : "ring-1 ring-border hover:border-gold/40 hover:shadow-md")
                     }
                     aria-pressed={isActive}
                   >
-                    <div className="relative aspect-video bg-navy">
+                    <div className="relative aspect-video bg-navy-deep">
                       <Thumb id={v.id} />
-                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
+                      <div className="absolute inset-0 bg-black/15 group-hover:bg-black/5 transition-colors" />
                     </div>
                     <div className="p-3 bg-white">
                       <p className="text-sm font-medium text-navy-deep line-clamp-2 leading-snug">
@@ -139,8 +140,8 @@ export function VideoStories() {
         </div>
 
         {/* Subscribe banner */}
-        <div className="mt-14 md:mt-20 rounded-2xl bg-gold p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10">
-          <p className="font-display text-2xl md:text-3xl text-navy-deep leading-snug flex-1">
+        <div className="mt-10 md:mt-14 rounded-xl bg-gradient-to-r from-gold/90 to-gold p-6 md:p-10 flex flex-col md:flex-row items-start md:items-center gap-5 md:gap-8 shadow-lg shadow-gold/20">
+          <p className="font-display text-xl md:text-2xl text-navy-deep leading-snug flex-1">
             Subscribe to our YouTube channel for stories, conversations, and updates from The
             Wicker Foundation.
           </p>
@@ -148,9 +149,9 @@ export function VideoStories() {
             href={CHANNEL_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-navy-deep text-cream px-7 py-4 rounded-full text-sm font-semibold tracking-[0.15em] uppercase hover:bg-navy transition-colors"
+            className="inline-flex items-center gap-2 bg-navy-deep text-cream px-6 py-3 rounded-full text-sm font-semibold hover:bg-navy transition-colors shadow-md"
           >
-            Subscribe →
+            Subscribe <span className="ml-1">→</span>
           </a>
         </div>
       </div>
@@ -158,7 +159,7 @@ export function VideoStories() {
       {/* Modal */}
       {openIdx !== null && (
         <div
-          className="fixed inset-0 z-[100] bg-black/85 backdrop-blur-sm flex items-center justify-center p-4 md:p-8 animate-in fade-in duration-200"
+          className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 md:p-8 animate-in fade-in duration-200"
           onClick={(e) => {
             if (e.target === e.currentTarget) setOpenIdx(null);
           }}
@@ -168,10 +169,10 @@ export function VideoStories() {
           <div ref={dialogRef} className="relative w-full max-w-5xl">
             <button
               onClick={() => setOpenIdx(null)}
-              className="absolute -top-4 -right-4 md:-top-6 md:-right-6 z-10 h-11 w-11 md:h-12 md:w-12 rounded-full bg-cream text-navy-deep flex items-center justify-center shadow-lg hover:bg-white transition-colors"
+              className="absolute -top-4 -right-4 md:-top-5 md:-right-5 z-10 h-10 w-10 md:h-11 md:w-11 rounded-full bg-cream text-navy-deep flex items-center justify-center shadow-lg hover:bg-white transition-colors"
               aria-label="Close video"
             >
-              <X className="h-5 w-5" />
+              <X className="h-4 w-4" />
             </button>
             <div className="aspect-video w-full rounded-xl overflow-hidden bg-black shadow-2xl">
               <iframe

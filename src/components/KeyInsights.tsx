@@ -49,40 +49,40 @@ function FlashCard({
           ? `${insight.front}. Showing detail. Click to flip back.`
           : `${insight.front}. Click to reveal the lesson.`
       }
-      className="group relative w-full h-[260px] md:h-[300px] text-left [perspective:1200px] focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 rounded-2xl motion-reduce:transition-opacity"
+      className="group relative w-full h-[240px] md:h-[280px] text-left [perspective:1200px] focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 rounded-xl motion-reduce:transition-opacity"
     >
       <div
-        className={`relative w-full h-full transition-transform duration-[600ms] ease-[cubic-bezier(0.22,1,0.36,1)] [transform-style:preserve-3d] motion-reduce:transition-opacity motion-reduce:duration-300 ${
+        className={`relative w-full h-full transition-transform duration-[550ms] ease-[cubic-bezier(0.22,1,0.36,1)] [transform-style:preserve-3d] motion-reduce:transition-opacity motion-reduce:duration-300 ${
           flipped ? "[transform:rotateY(180deg)] motion-reduce:[transform:none]" : ""
         }`}
       >
         {/* FRONT */}
         <div
-          className={`absolute inset-0 [backface-visibility:hidden] rounded-2xl bg-white border border-border p-6 md:p-8 flex flex-col justify-between shadow-[0_4px_20px_-8px_rgba(17,17,17,0.08)] group-hover:shadow-[0_12px_28px_-10px_rgba(59,130,246,0.18)] transition-shadow duration-500 motion-reduce:transition-opacity ${
+          className={`absolute inset-0 [backface-visibility:hidden] rounded-xl bg-white border border-border/80 p-5 md:p-6 flex flex-col justify-between shadow-sm group-hover:shadow-lg group-hover:border-gold/30 transition-all duration-400 motion-reduce:transition-opacity ${
             flipped ? "motion-reduce:opacity-0 motion-reduce:pointer-events-none" : ""
           }`}
         >
-          <div className="w-10 h-[3px] rounded-full bg-[#3B82F6]" aria-hidden />
-          <p className="font-display text-xl md:text-2xl leading-[1.2] text-navy-deep">
+          <div className="w-8 h-[2px] rounded-full bg-gold" aria-hidden />
+          <p className="font-display text-lg md:text-xl leading-[1.2] text-navy-deep">
             {insight.front}
           </p>
-          <p className="text-[11px] font-medium tracking-[0.18em] uppercase text-navy/50">
+          <p className="text-[10px] font-medium tracking-[0.18em] uppercase text-navy/50">
             Click to reveal
           </p>
         </div>
 
         {/* BACK */}
         <div
-          className={`absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] motion-reduce:[transform:none] rounded-2xl bg-navy-deep text-cream p-6 md:p-8 flex flex-col justify-between shadow-[0_12px_28px_-10px_rgba(59,130,246,0.25)] motion-reduce:transition-opacity ${
+          className={`absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] motion-reduce:[transform:none] rounded-xl bg-navy-deep text-cream p-5 md:p-6 flex flex-col justify-between shadow-lg motion-reduce:transition-opacity ${
             flipped ? "" : "motion-reduce:opacity-0 motion-reduce:pointer-events-none"
           }`}
         >
-          <div className="w-10 h-[3px] rounded-full bg-[#3B82F6]" aria-hidden />
-          <p className="text-[15px] md:text-base leading-[1.55] text-cream/95 overflow-hidden">
+          <div className="w-8 h-[2px] rounded-full bg-gold" aria-hidden />
+          <p className="text-[14px] md:text-[15px] leading-[1.55] text-cream/95 overflow-hidden">
             {insight.back}
           </p>
-          <div className="pt-3 border-t border-cream/15">
-            <p className="text-[10px] font-medium tracking-[0.22em] uppercase text-cream/50">
+          <div className="pt-2.5 border-t border-cream/15">
+            <p className="text-[9px] font-medium tracking-[0.22em] uppercase text-cream/50">
               From The Weaker Arm Series
             </p>
           </div>
@@ -154,21 +154,23 @@ export function KeyInsights() {
   return (
     <section
       id="insights"
-      className="py-12 md:py-16 bg-gradient-to-b from-cream-soft/60 via-background to-background"
+      className="relative py-14 md:py-20 lg:py-24 overflow-hidden"
     >
-      <div className="container-x">
+      <div className="absolute inset-0 bg-gradient-to-br from-cream-soft/40 via-background to-cream-soft/30" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(59,130,246,0.05),transparent_50%)]" />
+      <div className="relative container-x">
         {/* Header */}
-        <div className="max-w-2xl mb-8 md:mb-10">
+        <div className="max-w-xl mb-8 md:mb-12">
           <p className="text-xs font-semibold tracking-[0.3em] uppercase text-gold mb-4">
             Insights
           </p>
           <h2
             data-reveal
-            className="font-display text-4xl md:text-5xl lg:text-6xl text-navy-deep leading-[1.05]"
+            className="font-display text-3xl md:text-4xl lg:text-5xl text-navy-deep leading-[1.05]"
           >
             Lessons From The Series
           </h2>
-          <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
+          <p className="mt-4 text-muted-foreground leading-relaxed text-[15px]">
             Flip through practical leadership lessons drawn from The Weaker Arm Series and The Value of the Weaker Arm.
           </p>
         </div>
@@ -179,7 +181,7 @@ export function KeyInsights() {
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
-          <div className="overflow-hidden rounded-2xl">
+          <div className="overflow-hidden rounded-xl">
             <div
               ref={trackRef}
               className="flex transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
@@ -190,7 +192,7 @@ export function KeyInsights() {
               {INSIGHTS.map((insight) => (
                 <div
                   key={insight.front}
-                  className="flex-shrink-0 px-2 md:px-3"
+                  className="flex-shrink-0 px-1.5 md:px-2"
                   style={{
                     width: `${100 / itemsPerPage}%`,
                   }}
@@ -206,17 +208,17 @@ export function KeyInsights() {
           </div>
 
           {/* Arrows */}
-          <div className="flex items-center justify-between mt-8 md:mt-10">
+          <div className="flex items-center justify-between mt-6 md:mt-8">
             <button
               onClick={prev}
               aria-label="Previous slide"
-              className="h-11 w-11 rounded-full border border-border bg-white flex items-center justify-center text-navy-deep hover:border-gold hover:text-gold transition-colors"
+              className="h-10 w-10 rounded-full border border-border/80 bg-white flex items-center justify-center text-navy-deep hover:border-gold hover:text-gold hover:shadow-md transition-all duration-300"
             >
               <ArrowLeft className="h-4 w-4" />
             </button>
 
             {/* Dots */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5">
               {Array.from({ length: totalPages }).map((_, i) => (
                 <button
                   key={i}
@@ -225,8 +227,8 @@ export function KeyInsights() {
                   aria-current={i === page ? "true" : undefined}
                   className={`h-2 rounded-full transition-all duration-300 ${
                     i === page
-                      ? "w-6 bg-[#3B82F6]"
-                      : "w-2 bg-navy-deep/20 hover:bg-navy-deep/40"
+                      ? "w-5 bg-gold"
+                      : "w-2 bg-navy-deep/15 hover:bg-navy-deep/35"
                   }`}
                 />
               ))}
@@ -235,7 +237,7 @@ export function KeyInsights() {
             <button
               onClick={next}
               aria-label="Next slide"
-              className="h-11 w-11 rounded-full border border-border bg-white flex items-center justify-center text-navy-deep hover:border-gold hover:text-gold transition-colors"
+              className="h-10 w-10 rounded-full border border-border/80 bg-white flex items-center justify-center text-navy-deep hover:border-gold hover:text-gold hover:shadow-md transition-all duration-300"
             >
               <ArrowRight className="h-4 w-4" />
             </button>

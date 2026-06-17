@@ -58,14 +58,14 @@ function useCountUp(end: number, duration = 1800) {
 function Metric({ end, suffix, label }: { end: number; suffix: string; label: string }) {
   const { ref, val } = useCountUp(end);
   return (
-    <div className="border-t border-cream/20 pt-8">
+    <div className="border-t border-cream/15 pt-6">
       <div className="flex items-baseline gap-1">
-        <span ref={ref} className="font-display text-6xl md:text-7xl lg:text-8xl font-medium text-cream tabular-nums">
+        <span ref={ref} className="font-display text-5xl md:text-6xl lg:text-7xl font-medium text-cream tabular-nums">
           {val.toLocaleString()}
         </span>
-        <span className="font-display text-4xl md:text-5xl text-gold">{suffix}</span>
+        <span className="font-display text-3xl md:text-4xl text-gold">{suffix}</span>
       </div>
-      <p className="mt-4 text-cream/70 text-base md:text-lg max-w-xs leading-relaxed">{label}</p>
+      <p className="mt-3 text-cream/65 text-sm md:text-base max-w-xs leading-relaxed">{label}</p>
     </div>
   );
 }
@@ -306,23 +306,24 @@ function Index() {
 
 
       {/* Featured campaign */}
-      <section className="bg-navy-deep text-cream py-20 md:py-24">
-        <div className="container-x">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <section className="relative bg-navy-deep text-cream py-16 md:py-20 lg:py-24">
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-deep via-navy-deep/98 to-navy-deep" />
+        <div className="relative container-x">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div className="order-2 lg:order-1">
-              <p className="text-sm font-medium tracking-[0.2em] uppercase text-gold mb-6">Featured Campaign</p>
-              <h2 data-reveal className="font-display text-4xl md:text-5xl lg:text-6xl leading-tight">
+              <p className="text-sm font-medium tracking-[0.2em] uppercase text-gold mb-5">Featured Campaign</p>
+              <h2 data-reveal className="font-display text-3xl md:text-4xl lg:text-5xl leading-tight">
                 Education Access Starts With <em className="italic text-gold-soft font-normal">Awareness</em>
               </h2>
-              <p className="mt-8 text-cream/75 text-lg leading-relaxed max-w-lg">
+              <p className="mt-6 text-cream/75 text-lg leading-relaxed max-w-lg">
                 Most students don't lack ambition — they lack information. Our launch campaign is mapping the invisible barriers between learners and the opportunities already meant for them.
               </p>
-              <a href="#" className="mt-10 inline-flex items-center gap-2 bg-gold text-navy-deep px-7 py-4 rounded-full font-semibold hover:bg-gold-soft transition-all hover:gap-3">
+              <a href="#" className="mt-8 inline-flex items-center gap-2 bg-gold text-navy-deep px-7 py-4 rounded-full font-semibold hover:bg-gold-soft transition-all hover:gap-3">
                 Read the Vision <ArrowRight className="h-4 w-4" />
               </a>
             </div>
             <div className="order-1 lg:order-2">
-              <img src={campaignImg} alt="Students engaging with a world map in a classroom" width={1600} height={1024} loading="lazy" className="w-full h-[480px] object-cover rounded-sm" />
+              <img src={campaignImg} alt="Students engaging with a world map in a classroom" width={1600} height={1024} loading="lazy" className="w-full h-[420px] lg:h-[480px] object-cover rounded-lg shadow-2xl" />
             </div>
           </div>
         </div>
@@ -335,28 +336,27 @@ function Index() {
 
 
       {/* Focus areas */}
-      <section id="programs" className="py-20 md:py-24">
-
+      <section id="programs" className="relative py-14 md:py-20 lg:py-24 bg-gradient-to-b from-background via-cream-soft/30 to-background">
         <div className="container-x">
-          <div className="max-w-3xl mb-16 md:mb-24">
-            <p className="text-sm font-medium tracking-[0.2em] uppercase text-navy/60 mb-6">What We Do</p>
-            <h2 data-reveal className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-navy-deep">
+          <div className="max-w-3xl mb-12 md:mb-16">
+            <p className="text-sm font-medium tracking-[0.2em] uppercase text-navy/60 mb-5">What We Do</p>
+            <h2 data-reveal className="font-display text-3xl md:text-4xl lg:text-5xl leading-[1.05] text-navy-deep">
               Our Big Focus Areas
             </h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-px bg-border border border-border">
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
             {[
               { n: "01", t: "Opportunity Discovery", d: "Helping students find scholarships, programs, courses, and learning resources that match who they are and where they want to go." },
               { n: "02", t: "Guidance and Mentorship", d: "Connecting learners with advice, role models, and practical next steps from people who have walked the path." },
               { n: "03", t: "Community and Awareness", d: "Creating stories, campaigns, and tools that make education opportunities easier to find for everyone." },
             ].map((f) => (
-              <div key={f.n} className="group bg-cream p-10 md:p-12 hover:bg-cream-soft transition-colors duration-500">
-                <div className="flex items-start justify-between mb-12">
-                  <span className="font-display text-2xl text-gold">{f.n}</span>
-                  <span className="h-px w-12 bg-navy-deep/20 mt-4 group-hover:w-20 group-hover:bg-gold transition-all duration-500" />
+              <div key={f.n} className="group bg-white p-8 md:p-10 rounded-xl border border-border/60 hover:border-gold/40 hover:shadow-lg hover:shadow-gold/5 transition-all duration-500">
+                <div className="flex items-start justify-between mb-8">
+                  <span className="font-display text-xl text-gold">{f.n}</span>
+                  <span className="h-px w-10 bg-navy-deep/15 mt-3 group-hover:w-14 group-hover:bg-gold transition-all duration-500" />
                 </div>
-                <h3 className="font-display text-2xl md:text-3xl text-navy-deep leading-tight mb-6">{f.t}</h3>
-                <p className="text-muted-foreground leading-relaxed mb-8">{f.d}</p>
+                <h3 className="font-display text-xl md:text-2xl text-navy-deep leading-tight mb-4">{f.t}</h3>
+                <p className="text-muted-foreground leading-relaxed mb-6 text-[15px]">{f.d}</p>
                 <a href="#" className="inline-flex items-center gap-2 link-underline text-navy-deep font-medium text-sm">
                   Read more <ArrowRight className="h-4 w-4" />
                 </a>
@@ -367,15 +367,16 @@ function Index() {
       </section>
 
       {/* Metrics */}
-      <section className="bg-navy-deep text-cream py-20 md:py-24">
-        <div className="container-x">
-          <div className="max-w-3xl mb-16 md:mb-20">
-            <p className="text-sm font-medium tracking-[0.2em] uppercase text-gold mb-6">Our Aspiration</p>
-            <h2 data-reveal className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05]">
+      <section className="relative bg-navy-deep text-cream py-14 md:py-20 lg:py-24">
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-deep via-navy-deep/98 to-navy-deep/95" />
+        <div className="relative container-x">
+          <div className="max-w-3xl mb-10 md:mb-14">
+            <p className="text-sm font-medium tracking-[0.2em] uppercase text-gold mb-5">Our Aspiration</p>
+            <h2 data-reveal className="font-display text-3xl md:text-4xl lg:text-5xl leading-[1.05]">
               What we're building toward.
             </h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-12 md:gap-16">
+          <div className="grid md:grid-cols-3 gap-10 md:gap-14">
             <Metric end={10000} suffix="+" label="Learners to reach in the first phase of our launch." />
             <Metric end={100} suffix="+" label="Education resources to curate, verify, and translate." />
             <Metric end={50} suffix="+" label="Partners, mentors, and contributors to engage worldwide." />
@@ -384,12 +385,12 @@ function Index() {
       </section>
 
       {/* Stories */}
-      <section id="stories" className="py-20 md:py-24">
+      <section id="stories" className="relative py-14 md:py-20 lg:py-24 bg-gradient-to-b from-background via-cream-soft/20 to-background">
         <div className="container-x">
-          <div className="flex items-end justify-between mb-16 gap-8 flex-wrap">
-            <div className="max-w-2xl">
-              <p className="text-sm font-medium tracking-[0.2em] uppercase text-navy/60 mb-6">Voices</p>
-              <h2 data-reveal className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-navy-deep">
+          <div className="flex items-end justify-between mb-10 md:mb-14 gap-6 flex-wrap">
+            <div className="max-w-xl">
+              <p className="text-sm font-medium tracking-[0.2em] uppercase text-navy/60 mb-5">Voices</p>
+              <h2 data-reveal className="font-display text-3xl md:text-4xl lg:text-5xl leading-[1.05] text-navy-deep">
                 Stories Behind the Mission
               </h2>
             </div>
@@ -397,7 +398,7 @@ function Index() {
               View all stories <ArrowRight className="h-4 w-4" />
             </a>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
             {[
               { img: storyScholarship, tag: "Learner Story", title: "The night she found three scholarships she qualified for", excerpt: "How one student turned a Saturday search into a fully funded year of study.", icon: Play },
               { img: storyMentor, tag: "Mentorship", title: "What a good mentor really gives you", excerpt: "Beyond advice — the quiet confidence that comes from someone believing in you.", icon: ArrowRight },
@@ -405,17 +406,19 @@ function Index() {
             ].map((s, i) => {
               const Icon = s.icon;
               return (
-                <a href="#" key={i} className="group block">
-                  <div className="relative overflow-hidden rounded-sm">
-                    <img src={s.img} alt={s.title} width={1024} height={1024} loading="lazy" className="w-full h-[360px] object-cover group-hover:scale-105 transition-transform duration-700" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <div className="absolute top-5 left-5 bg-cream/95 px-3 py-1 text-xs font-medium uppercase tracking-wider text-navy-deep">{s.tag}</div>
-                    <div className="absolute bottom-5 right-5 h-12 w-12 rounded-full bg-gold flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all">
+                <a href="#" key={i} className="group block rounded-xl overflow-hidden bg-white border border-border/50 hover:border-gold/40 hover:shadow-lg hover:shadow-gold/5 transition-all duration-500">
+                  <div className="relative overflow-hidden">
+                    <img src={s.img} alt={s.title} width={1024} height={1024} loading="lazy" className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/70 via-navy-deep/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute top-4 left-4 bg-cream/95 backdrop-blur-sm px-3 py-1.5 text-xs font-medium uppercase tracking-wider text-navy-deep rounded-full">{s.tag}</div>
+                    <div className="absolute bottom-4 right-4 h-11 w-11 rounded-full bg-gold flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
                       <Icon className="h-5 w-5 text-navy-deep" />
                     </div>
                   </div>
-                  <h3 className="font-display text-2xl text-navy-deep mt-6 leading-snug group-hover:text-navy transition-colors">{s.title}</h3>
-                  <p className="text-muted-foreground mt-3 leading-relaxed">{s.excerpt}</p>
+                  <div className="p-6">
+                    <h3 className="font-display text-xl text-navy-deep leading-snug group-hover:text-navy transition-colors">{s.title}</h3>
+                    <p className="text-muted-foreground mt-2 leading-relaxed text-[15px]">{s.excerpt}</p>
+                  </div>
                 </a>
               );
             })}
@@ -423,65 +426,66 @@ function Index() {
         </div>
       </section>
 
-      <div id="book" className="scroll-mt-24">
+      <div id="book" className="scroll-mt-16">
         <FeaturedBook />
       </div>
 
       <KeyInsights />
 
       {/* Newsletter CTA */}
-      <section id="contact" className="relative py-20 md:py-24 overflow-hidden bg-gradient-to-br from-cream-soft via-cream to-gold-soft/30 scroll-mt-20">
-        <div className="container-x relative">
-          <div className="max-w-3xl mx-auto text-center">
-            <p className="text-sm font-medium tracking-[0.2em] uppercase text-navy/60 mb-6">Stay Connected</p>
-            <h2 data-reveal className="font-display text-4xl md:text-6xl lg:text-7xl leading-[1.02] text-navy-deep">
+      <section id="contact" className="relative py-14 md:py-20 lg:py-24 overflow-hidden bg-gradient-to-br from-cream-soft via-cream to-gold-soft/20 scroll-mt-14">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.08),transparent_50%)]" />
+        <div className="relative container-x">
+          <div className="max-w-2xl mx-auto text-center">
+            <p className="text-sm font-medium tracking-[0.2em] uppercase text-navy/60 mb-5">Stay Connected</p>
+            <h2 data-reveal className="font-display text-3xl md:text-4xl lg:text-5xl leading-[1.05] text-navy-deep">
               Get updates that <em className="italic text-gold">matter.</em>
             </h2>
-            <p className="mt-8 text-lg md:text-xl text-muted-foreground max-w-xl mx-auto leading-relaxed">
+            <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-lg mx-auto leading-relaxed">
               Education opportunities, learner stories, resources, and launch news — sent thoughtfully, never noisy.
             </p>
-            <form onSubmit={(e) => e.preventDefault()} className="mt-12 flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
+            <form onSubmit={(e) => e.preventDefault()} className="mt-10 flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
               <input
                 type="email"
                 required
                 placeholder="you@example.com"
-                className="flex-1 bg-cream border border-border px-6 py-4 rounded-full text-base text-navy-deep placeholder:text-navy/40 focus:outline-none focus:border-navy-deep transition"
+                className="flex-1 bg-white border border-border px-5 py-4 rounded-full text-base text-navy-deep placeholder:text-navy/40 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition shadow-sm"
               />
-              <button type="submit" className="inline-flex items-center justify-center gap-2 bg-navy-deep text-cream px-8 py-4 rounded-full font-semibold hover:bg-navy transition-all hover:gap-3">
+              <button type="submit" className="inline-flex items-center justify-center gap-2 bg-navy-deep text-cream px-8 py-4 rounded-full font-semibold hover:bg-navy transition-all hover:gap-3 shadow-lg shadow-navy-deep/20">
                 Subscribe <ArrowRight className="h-4 w-4" />
               </button>
             </form>
-            <p className="mt-5 text-xs text-muted-foreground">No spam. Unsubscribe anytime.</p>
+            <p className="mt-4 text-xs text-muted-foreground">No spam. Unsubscribe anytime.</p>
           </div>
         </div>
       </section>
 
       {/* Latest updates */}
-      <section className="py-20 md:py-24 border-t border-border">
+      <section className="relative py-14 md:py-20 lg:py-24 bg-cream-soft/40">
         <div className="container-x">
-          <div className="flex items-end justify-between mb-16 gap-8 flex-wrap">
+          <div className="flex items-end justify-between mb-10 md:mb-14 gap-6 flex-wrap">
             <div>
-              <p className="text-sm font-medium tracking-[0.2em] uppercase text-navy/60 mb-6">Journal</p>
-              <h2 data-reveal className="font-display text-4xl md:text-5xl text-navy-deep">Latest Updates</h2>
+              <p className="text-sm font-medium tracking-[0.2em] uppercase text-navy/60 mb-5">Journal</p>
+              <h2 data-reveal className="font-display text-3xl md:text-4xl text-navy-deep">Latest Updates</h2>
             </div>
             <a href="#" className="link-underline text-navy-deep font-medium inline-flex items-center gap-2">
               All articles <ArrowRight className="h-4 w-4" />
             </a>
           </div>
-          <div className="grid md:grid-cols-3 gap-px bg-border border border-border">
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
             {[
               { date: "Jun 04, 2026", cat: "Essay", title: "Why education access begins with information", excerpt: "Information is the first scholarship — and we don't distribute it fairly." },
               { date: "May 22, 2026", cat: "Product", title: "Building a learner-first opportunity platform", excerpt: "Inside the design principles guiding what we ship and what we don't." },
               { date: "May 09, 2026", cat: "Field Notes", title: "How communities can help students find pathways", excerpt: "Three lessons from local educators rethinking the role of the neighborhood." },
             ].map((a, i) => (
-              <a href="#" key={i} className="group bg-cream p-8 md:p-10 hover:bg-cream-soft transition-colors">
-                <div className="flex items-center gap-3 text-xs uppercase tracking-wider text-navy/60 mb-8">
+              <a href="#" key={i} className="group bg-white p-6 md:p-8 rounded-xl border border-border/60 hover:border-gold/40 hover:shadow-lg hover:shadow-gold/5 transition-all duration-500">
+                <div className="flex items-center gap-2 text-xs uppercase tracking-wider text-navy/60 mb-6">
                   <span>{a.date}</span>
                   <span className="h-1 w-1 rounded-full bg-navy/30" />
                   <span className="text-gold font-medium">{a.cat}</span>
                 </div>
-                <h3 className="font-display text-2xl text-navy-deep leading-tight mb-4 group-hover:text-navy transition">{a.title}</h3>
-                <p className="text-muted-foreground leading-relaxed mb-8">{a.excerpt}</p>
+                <h3 className="font-display text-xl text-navy-deep leading-tight mb-3 group-hover:text-navy transition">{a.title}</h3>
+                <p className="text-muted-foreground leading-relaxed mb-6 text-[15px]">{a.excerpt}</p>
                 <span className="inline-flex items-center gap-2 text-sm font-medium text-navy-deep">
                   Read article <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </span>
@@ -492,39 +496,40 @@ function Index() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-navy-deep text-cream pt-20 pb-10">
-        <div className="container-x">
-          <div className="grid lg:grid-cols-12 gap-12 mb-16">
+      <footer className="relative bg-navy-deep text-cream pt-14 md:pt-20 pb-8 md:pb-10">
+        <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep to-navy-deep/98" />
+        <div className="relative container-x">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 mb-12 lg:mb-14">
             <div className="lg:col-span-4">
-              <div className="flex items-center gap-2.5 mb-6">
+              <div className="flex items-center gap-2.5 mb-5">
                 <div className="h-9 w-9 rounded-full bg-cream flex items-center justify-center">
                   <span className="font-display text-navy-deep text-lg leading-none">L</span>
                 </div>
                 <span className="font-display text-xl">Lumen</span>
               </div>
-              <p className="text-cream/70 leading-relaxed max-w-sm">
+              <p className="text-cream/70 leading-relaxed max-w-sm text-sm">
                 A global education-access initiative making opportunity visible, navigable, and human — for every learner with the ambition to pursue it.
               </p>
-              <div className="flex items-center gap-4 mt-8">
+              <div className="flex items-center gap-3 mt-6">
                 {[Linkedin, Instagram, Youtube, Twitter].map((Icon, i) => (
-                  <a key={i} href="#" className="h-10 w-10 rounded-full border border-cream/20 flex items-center justify-center hover:bg-cream hover:text-navy-deep transition">
+                  <a key={i} href="#" className="h-9 w-9 rounded-full border border-cream/20 flex items-center justify-center hover:bg-cream hover:text-navy-deep transition-colors duration-300">
                     <Icon className="h-4 w-4" />
                   </a>
                 ))}
               </div>
             </div>
-            <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-10">
+            <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-10">
               {[
                 { h: "Resources", l: ["Scholarships", "Guides", "Blog", "FAQs"] },
                 { h: "Organization", l: ["About", "Mission", "Team", "Contact"] },
                 { h: "Get Involved", l: ["Partner With Us", "Volunteer", "Mentor", "Support"] },
               ].map((col) => (
                 <div key={col.h}>
-                  <h4 className="font-display text-gold text-base mb-5">{col.h}</h4>
-                  <ul className="space-y-3">
+                  <h4 className="font-display text-gold text-base mb-4">{col.h}</h4>
+                  <ul className="space-y-2.5">
                     {col.l.map((item) => (
                       <li key={item}>
-                        <a href="#" className="text-cream/75 hover:text-cream text-sm transition">{item}</a>
+                        <a href="#" className="text-cream/70 hover:text-cream text-sm transition-colors">{item}</a>
                       </li>
                     ))}
                   </ul>
@@ -532,12 +537,12 @@ function Index() {
               ))}
             </div>
           </div>
-          <div className="border-t border-cream/15 pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-sm text-cream/60">
+          <div className="border-t border-cream/15 pt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-sm text-cream/60">
             <p>© {new Date().getFullYear()} Lumen Education Access Initiative. All rights reserved.</p>
             <div className="flex gap-6">
-              <a href="#" className="hover:text-cream transition">Privacy</a>
-              <a href="#" className="hover:text-cream transition">Terms</a>
-              <a href="#" className="hover:text-cream transition">Cookies</a>
+              <a href="#" className="hover:text-cream transition-colors">Privacy</a>
+              <a href="#" className="hover:text-cream transition-colors">Terms</a>
+              <a href="#" className="hover:text-cream transition-colors">Cookies</a>
             </div>
           </div>
         </div>
