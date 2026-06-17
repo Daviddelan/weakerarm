@@ -94,15 +94,14 @@ export function VoicesCarousel() {
   }, [scrollPrev, scrollNext]);
 
   return (
-    <section className="relative bg-gradient-to-b from-navy-deep via-navy-deep/98 to-navy-deep py-16 md:py-24 lg:py-28" aria-label="Voices that inspire change">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.1),transparent_70%)]" />
-      <div className="relative container-x">
-        <div className="max-w-3xl mb-10 md:mb-14">
-          <p className="text-sm font-medium tracking-[0.2em] uppercase text-gold mb-5">
+    <section className="bg-cream py-24 md:py-36" aria-label="Voices that inspire change">
+      <div className="container-x">
+        <div className="max-w-3xl mb-14 md:mb-20">
+          <p className="text-sm font-medium tracking-[0.2em] uppercase text-navy/60 mb-6">
             Voices &amp; Stories
           </p>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-cream leading-tight">
-            Voices That <em className="italic text-gold-soft font-normal">Inspire Change</em>
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-navy-deep leading-tight">
+            Voices That <em className="italic text-gold font-normal">Inspire Change</em>
           </h2>
         </div>
 
@@ -128,34 +127,34 @@ export function VoicesCarousel() {
           </div>
 
           {/* Controls */}
-          <div className="mt-10 md:mt-14 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-2.5" role="tablist" aria-label="Slide navigation">
+          <div className="mt-12 md:mt-16 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="flex items-center gap-3" role="tablist" aria-label="Slide navigation">
               {SLIDES.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => scrollTo(i)}
                   aria-label={`Go to slide ${i + 1}`}
                   aria-selected={selected === i}
-                  className={`h-2 rounded-full transition-all duration-300 ${
-                    selected === i ? "w-7 bg-gold" : "w-2 bg-cream/20 hover:bg-cream/40"
+                  className={`h-2.5 rounded-full transition-all duration-300 ${
+                    selected === i ? "w-8 bg-navy-deep" : "w-2.5 bg-navy/20 hover:bg-navy/40"
                   }`}
                 />
               ))}
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-4">
               <button
                 onClick={scrollPrev}
                 aria-label="Previous slide"
-                className="h-11 w-11 rounded-full bg-cream/10 text-cream border border-cream/20 flex items-center justify-center transition-all duration-300 hover:bg-cream/20 hover:scale-105"
+                className="h-12 w-12 rounded-full bg-navy-deep text-cream flex items-center justify-center transition-all duration-300 hover:bg-navy hover:scale-110 hover:-translate-x-0.5"
               >
-                <ArrowLeft className="h-4 w-4" />
+                <ArrowLeft className="h-5 w-5" />
               </button>
               <button
                 onClick={scrollNext}
                 aria-label="Next slide"
-                className="h-11 w-11 rounded-full bg-cream/10 text-cream border border-cream/20 flex items-center justify-center transition-all duration-300 hover:bg-cream/20 hover:scale-105"
+                className="h-12 w-12 rounded-full bg-navy-deep text-cream flex items-center justify-center transition-all duration-300 hover:bg-navy hover:scale-110 hover:translate-x-0.5"
               >
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="h-5 w-5" />
               </button>
             </div>
           </div>
@@ -168,15 +167,15 @@ export function VoicesCarousel() {
 function SlideContent({ slide }: { slide: Slide }) {
   if (slide.kind === "founder") {
     return (
-      <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+      <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
+          transition={{ duration: 0.7, ease: [0.2, 0.8, 0.2, 1] }}
           className="relative flex justify-center lg:justify-start"
         >
-          <div className="relative w-[260px] h-[260px] sm:w-[340px] sm:h-[340px] lg:w-[400px] lg:h-[400px] group">
+          <div className="relative w-[280px] h-[280px] sm:w-[360px] sm:h-[360px] lg:w-[440px] lg:h-[440px] group">
             <svg
               viewBox="0 0 100 100"
               className="absolute inset-0 w-full h-full animate-[spin_14s_linear_infinite] group-hover:[animation-play-state:paused]"
@@ -204,25 +203,25 @@ function SlideContent({ slide }: { slide: Slide }) {
           </div>
         </motion.div>
         <div>
-          <Quote className="h-8 w-8 md:h-10 md:w-10 text-gold mb-5" strokeWidth={2.5} />
+          <Quote className="h-10 w-10 md:h-12 md:w-12 text-navy-deep mb-6" strokeWidth={2.5} />
           <motion.blockquote
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.6, delay: 0.1, ease: [0.2, 0.8, 0.2, 1] }}
-            className="font-display text-xl md:text-2xl lg:text-3xl text-cream leading-snug"
+            transition={{ duration: 0.7, delay: 0.15, ease: [0.2, 0.8, 0.2, 1] }}
+            className="font-display text-2xl md:text-3xl lg:text-4xl text-navy-deep leading-snug"
           >
             "{slide.quote}"
           </motion.blockquote>
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.5, delay: 0.45 }}
-            className="mt-6"
+            transition={{ duration: 0.6, delay: 0.55 }}
+            className="mt-8"
           >
-            <p className="font-display text-lg md:text-xl text-cream">{slide.author}</p>
-            <p className="mt-1 text-sm text-cream/60">{slide.role}</p>
+            <p className="font-display text-xl md:text-2xl text-navy-deep">{slide.author}</p>
+            <p className="mt-1 text-sm md:text-base text-navy/60">{slide.role}</p>
           </motion.div>
         </div>
       </div>
@@ -231,13 +230,13 @@ function SlideContent({ slide }: { slide: Slide }) {
 
   const imageLeft = slide.imageSide !== "right";
   return (
-    <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+    <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
       <motion.div
         initial={{ opacity: 0, scale: 0.97 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
-        className={`${imageLeft ? "lg:order-1" : "lg:order-2"} order-1 group overflow-hidden rounded-xl shadow-2xl shadow-black/30`}
+        transition={{ duration: 0.7, ease: [0.2, 0.8, 0.2, 1] }}
+        className={`${imageLeft ? "lg:order-1" : "lg:order-2"} order-1 group overflow-hidden rounded-2xl shadow-[0_20px_60px_-20px_rgba(20,30,60,0.25)]`}
       >
         <img
           src={slide.image}
@@ -245,29 +244,29 @@ function SlideContent({ slide }: { slide: Slide }) {
           loading="lazy"
           width={1280}
           height={960}
-          className="w-full aspect-[4/3] object-cover transition-transform duration-[1000ms] ease-out group-hover:scale-[1.03]"
+          className="w-full aspect-[4/3] object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.05]"
         />
       </motion.div>
       <div className={`${imageLeft ? "lg:order-2" : "lg:order-1"} order-2`}>
-        <Quote className="h-8 w-8 md:h-10 md:w-10 text-gold mb-5" strokeWidth={2.5} />
+        <Quote className="h-10 w-10 md:h-12 md:w-12 text-gold mb-6" strokeWidth={2.5} />
         <motion.blockquote
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.6, delay: 0.1, ease: [0.2, 0.8, 0.2, 1] }}
-          className="font-display text-xl md:text-2xl lg:text-3xl text-cream leading-snug"
+          transition={{ duration: 0.7, delay: 0.15, ease: [0.2, 0.8, 0.2, 1] }}
+          className="font-display text-2xl md:text-3xl lg:text-4xl text-navy-deep leading-snug"
         >
           "{slide.quote}"
         </motion.blockquote>
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.5, delay: 0.45 }}
-          className="mt-6"
+          transition={{ duration: 0.6, delay: 0.55 }}
+          className="mt-8"
         >
-          <p className="font-display text-lg md:text-xl text-cream">{slide.author}</p>
-          <p className="mt-1 text-sm text-cream/60">{slide.role}</p>
+          <p className="font-display text-xl md:text-2xl text-navy-deep">{slide.author}</p>
+          <p className="mt-1 text-sm md:text-base text-navy/60">{slide.role}</p>
         </motion.div>
       </div>
     </div>

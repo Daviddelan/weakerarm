@@ -9,7 +9,7 @@ function BuyButton({ href, children }: { href: string; children: React.ReactNode
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center justify-center gap-2 bg-gold text-navy-deep px-7 py-3.5 rounded-full font-semibold text-sm tracking-wide hover:bg-gold-soft transition-all hover:gap-3 shadow-lg shadow-gold/20"
+      className="inline-flex items-center justify-center gap-2 bg-gold text-navy-deep px-8 py-4 rounded-full font-semibold text-sm tracking-wide hover:bg-gold-soft transition-all hover:gap-3"
     >
       {children} <ArrowRight className="h-4 w-4" />
     </a>
@@ -30,7 +30,7 @@ function SecondaryAction({
   onClick?: () => void;
 }) {
   const className =
-    "group flex items-center gap-3 text-left p-4 rounded-xl border border-border/60 bg-white hover:border-gold/40 hover:bg-cream-soft transition-all duration-300";
+    "group flex items-center gap-3 text-left p-4 rounded-xl border border-border bg-cream hover:bg-cream-soft transition-colors";
   const children = (
     <>
       <span className="flex items-center justify-center h-10 w-10 rounded-full bg-navy-deep/5 text-navy-deep group-hover:bg-gold/10 group-hover:text-gold transition-colors">
@@ -68,38 +68,36 @@ export function FeaturedBook() {
   };
 
   return (
-    <section className="relative py-14 md:py-20 lg:py-24 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-cream-soft/30 to-cream-soft/50" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(59,130,246,0.06),transparent_50%)]" />
-      <div className="relative container-x">
+    <section className="py-16 md:py-20 bg-gradient-to-b from-background via-cream-soft/40 to-cream-soft/60">
+      <div className="container-x">
         {/* Two-column layout */}
-        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           {/* LEFT — Book cover */}
           <div className="lg:col-span-5 xl:col-span-4">
-            <div className="relative max-w-sm mx-auto lg:mx-0">
+            <div className="relative max-w-md mx-auto lg:mx-0">
               <BookMediaGallery />
               {/* Decorative accent */}
-              <div className="absolute -bottom-3 -right-3 w-full h-full border-2 border-gold/25 rounded-2xl -z-10 pointer-events-none" />
+              <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-gold/30 rounded-2xl -z-10 pointer-events-none" />
             </div>
           </div>
 
           {/* RIGHT — Book details */}
           <div className="lg:col-span-7 xl:col-span-8 flex flex-col justify-center">
             {/* Badge */}
-            <p className="text-xs font-semibold tracking-[0.25em] uppercase text-gold mb-4">
+            <p className="text-xs font-semibold tracking-[0.25em] uppercase text-gold mb-5">
               From The Weaker Arm Series
             </p>
 
             {/* Title & Author */}
-            <h2 data-reveal className="font-display text-3xl md:text-4xl lg:text-5xl text-navy-deep leading-[1.05]">
+            <h2 data-reveal className="font-display text-4xl md:text-5xl lg:text-6xl text-navy-deep leading-[1.05]">
               The Value of the Weaker
             </h2>
-            <p className="mt-2 text-lg text-navy/70 font-medium">
+            <p className="mt-3 text-lg text-navy/70 font-medium">
               by David Nuworkpor
             </p>
 
             {/* Description */}
-            <div className="mt-6 space-y-3 text-muted-foreground leading-relaxed max-w-xl text-[15px]">
+            <div className="mt-8 space-y-4 text-muted-foreground leading-relaxed max-w-2xl">
               <p>
                 This book explores themes of opportunity, resilience, personal transformation, and overcoming barriers.
               </p>
@@ -109,12 +107,12 @@ export function FeaturedBook() {
             </div>
 
             {/* Purchase actions */}
-            <div className="mt-8 flex flex-col gap-4">
+            <div className="mt-10 flex flex-col gap-4">
               {/* Primary CTA */}
               <BuyButton href={AMAZON_URL}>Buy on Amazon</BuyButton>
 
               {/* Secondary actions */}
-              <div className="grid sm:grid-cols-2 gap-3 mt-1">
+              <div className="grid sm:grid-cols-2 gap-3 mt-2">
                 <SecondaryAction
                   icon={Phone}
                   label="Call to Order"
@@ -136,11 +134,11 @@ export function FeaturedBook() {
             </div>
 
             {/* Support card */}
-            <div className="mt-8 p-5 md:p-6 rounded-xl border-l-[3px] border-gold bg-white/80 backdrop-blur-sm shadow-sm">
-              <h3 className="font-display text-lg text-navy-deep mb-1.5">
+            <div className="mt-10 p-6 md:p-8 rounded-2xl border-l-4 border-gold bg-cream-soft/60">
+              <h3 className="font-display text-xl text-navy-deep mb-2">
                 Support The Movement
               </h3>
-              <p className="text-muted-foreground leading-relaxed max-w-xl text-[15px]">
+              <p className="text-muted-foreground leading-relaxed max-w-xl">
                 Every purchase helps support The Weaker Arm Series and its mission to tell stories of resilience, opportunity, and transformation.
               </p>
             </div>
