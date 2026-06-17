@@ -74,6 +74,17 @@
 }
 
 @layer base {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
   * {
     border-color: var(--color-border);
   }
@@ -85,6 +96,7 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
   h1, h2, h3, h4 {
     font-family: var(--font-display);
@@ -93,6 +105,15 @@
   }
   section[id] {
     scroll-margin-top: 96px;
+  }
+  /* Contain elements that breakout with negative margins / absolute offsets so
+     they never cause horizontal scroll on small screens. */
+  img,
+  video,
+  canvas,
+  svg {
+    max-width: 100%;
+    height: auto;
   }
   [data-reveal] {
     opacity: 0;
@@ -116,6 +137,7 @@
 
 @utility container-x {
   width: 100%;
+  max-width: 100%;
   margin-inline: auto;
   padding-inline: 1.5rem;
   max-width: 80rem;
