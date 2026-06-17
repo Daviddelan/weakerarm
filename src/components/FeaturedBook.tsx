@@ -74,10 +74,10 @@ export function FeaturedBook() {
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           {/* LEFT — Book cover */}
           <div className="lg:col-span-5 xl:col-span-4">
-            <div className="relative max-w-md mx-auto lg:mx-0 overflow-visible">
+            <div className="relative max-w-md mx-auto lg:mx-0">
               <BookMediaGallery />
-              {/* Decorative accent — hidden on mobile to avoid overflow */}
-              <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-gold/30 rounded-2xl -z-10 pointer-events-none hidden sm:block" />
+              {/* Decorative accent */}
+              <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-gold/30 rounded-2xl -z-10 pointer-events-none" />
             </div>
           </div>
 

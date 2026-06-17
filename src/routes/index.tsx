@@ -168,7 +168,7 @@ function Index() {
       </aside>
 
       {/* Hero + Mission wrapper — overlapping editorial flow */}
-      <div className="relative overflow-x-hidden">
+      <div className="relative">
         {/* Hero with video background + transparent nav overlay */}
         <section id="hero" className="relative h-screen min-h-[760px] md:min-h-[820px] w-full overflow-hidden bg-navy-deep">
           <video
@@ -255,7 +255,7 @@ function Index() {
         {/* Mission section — flows underneath the overlapping Who We Are card */}
         <section
           id="mission"
-          className="relative overflow-x-hidden bg-gradient-to-b from-cream-soft/70 via-background to-background pt-[clamp(200px,22vw,300px)] pb-20 md:pb-24"
+          className="relative bg-gradient-to-b from-cream-soft/70 via-background to-background pt-[clamp(200px,22vw,300px)] pb-20 md:pb-24"
         >
           {/* Who We Are — premium editorial panel bridging hero & mission */}
           <div id="about" className="absolute left-0 right-0 top-25 -translate-y-1/2 z-20 container-x pointer-events-none">
@@ -282,7 +282,7 @@ function Index() {
               </div>
             </div>
             <div className="lg:col-span-5 lg:translate-y-[-2rem] xl:translate-y-[-6rem]">
-              <div className="relative lg:-mt-28 xl:-mt-36 overflow-x-hidden">
+              <div className="relative lg:-mt-28 xl:-mt-36">
                 <video
                   src="https://firebasestorage.googleapis.com/v0/b/weakerarm-fa8cb.firebasestorage.app/o/the_weaker_arm_original_text_animation.mp4?alt=media&token=458102ca-69a8-4eb3-990b-2cabcc868c2f"
                   autoPlay

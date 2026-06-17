@@ -92,7 +92,7 @@ export function Book3DViewer() {
   }
 
   return (
-    <div className="relative w-full max-w-full overflow-hidden" style={{ aspectRatio: "1024 / 1536" }}>
+    <div className="relative w-full" style={{ aspectRatio: "1024 / 1536" }}>
       {ready
         ? createElement("model-viewer", {
             ref: modelViewerRef,
@@ -100,7 +100,6 @@ export function Book3DViewer() {
             style: {
               width: "100%",
               height: "100%",
-              maxWidth: "100%",
               backgroundColor: "transparent",
             },
           } satisfies ModelViewerProps)
