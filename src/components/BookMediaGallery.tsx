@@ -4,7 +4,7 @@ import { Book3DViewer } from "./Book3DViewer";
 import bookCover from "@/assets/book-cover.jpg";
 
 const VIDEO_URL =
-  "https://firebasestorage.googleapis.com/v0/b/weakerarm-fa8cb.firebasestorage.app/o/whatsapp-status-1.mp4?alt=media&token=8dc47288-d3ad-481c-a892-6cbcb1a64945";
+  "https://firebasestorage.googleapis.com/v0/b/weakerarm-fa8cb.firebasestorage.app/o/weakerarm.mp4?alt=media&token=6c4e6066-c502-4601-8f70-9639f671f37b";
 
 type MediaType = "model" | "video";
 
@@ -90,13 +90,16 @@ export function BookMediaGallery() {
           onClick={() => setActive("model")}
           aria-label="View 3D book model"
           aria-pressed={active === "model"}
-          className={`relative h-16 w-16 rounded-lg overflow-hidden border-2 transition-all ${
-            active === "model"
+          className={`relative h-16 w-16 rounded-lg overflow-hidden border-2 transition-all ${active === "model"
               ? "border-gold ring-2 ring-gold/30"
               : "border-border hover:border-gold/50"
-          }`}
+            }`}
         >
-          <img src={bookCover} alt="" className="w-full h-full object-cover" />
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/weakerarm-fa8cb.firebasestorage.app/o/weakerarm.png?alt=media&token=ae96d2bc-d730-4adc-923d-023f287b218b"
+            alt=""
+            className="w-full h-full object-cover"
+          />
           <span className="absolute inset-x-0 bottom-0 bg-navy-deep/80 text-cream text-[9px] font-semibold uppercase tracking-wider py-0.5 flex items-center justify-center gap-1">
             <Box className="h-2.5 w-2.5" /> 3D
           </span>
@@ -107,11 +110,10 @@ export function BookMediaGallery() {
           onClick={() => setActive("video")}
           aria-label="View book preview video"
           aria-pressed={active === "video"}
-          className={`relative h-16 w-16 rounded-lg overflow-hidden border-2 transition-all bg-navy-deep ${
-            active === "video"
+          className={`relative h-16 w-16 rounded-lg overflow-hidden border-2 transition-all bg-navy-deep ${active === "video"
               ? "border-gold ring-2 ring-gold/30"
               : "border-border hover:border-gold/50"
-          }`}
+            }`}
         >
           <div className="absolute inset-0 flex items-center justify-center">
             <span className="h-7 w-7 rounded-full bg-cream/90 flex items-center justify-center">
@@ -149,7 +151,7 @@ export function BookMediaGallery() {
             controls
             autoPlay
             playsInline
-            aria-label="Book preview video for The Value of the Weaker"
+            aria-label="Book preview video for The Value of the Weaker Arm"
             className="max-w-full max-h-full rounded-xl shadow-2xl"
           />
         </div>

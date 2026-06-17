@@ -181,8 +181,8 @@ function Index() {
             poster={heroImg}
             className="absolute inset-0 h-full w-full object-cover"
           >
-            <source src="https://videos.pexels.com/video-files/8419213/8419213-hd_1920_1080_25fps.mp4" type="video/mp4" />
-            <source src="https://videos.pexels.com/video-files/5198159/5198159-hd_1920_1080_25fps.mp4" type="video/mp4" />
+            <source src="https://firebasestorage.googleapis.com/v0/b/weakerarm-fa8cb.firebasestorage.app/o/WeakerArmHeroVideo..mp4?alt=media&token=d7066b04-e3e3-4c5d-9d95-2c511445216f" type="video/mp4" />
+            <source src="https://firebasestorage.googleapis.com/v0/b/weakerarm-fa8cb.firebasestorage.app/o/weakerArmLowRes.mp4?alt=media&token=ab1f29ec-e8d8-4913-a247-f58e2956e29d" type="video/mp4" />
           </video>
           {/* Soft overlays */}
           <div className="absolute inset-0 bg-navy-deep/45" />
@@ -192,7 +192,7 @@ function Index() {
           <header className={`absolute top-0 inset-x-0 z-30 transition-all duration-500 ${scrolled ? "bg-navy-deep/85 backdrop-blur-md" : "bg-transparent"}`}>
             <div className="container-x flex items-center justify-between py-6">
               <a href="#" className="font-display text-cream text-xl md:text-2xl tracking-tight">
-                The Wicker Foundation
+                The Weaker Arm
               </a>
               <nav className="hidden lg:flex items-center gap-9">
                 {navItems.map((item) => {
@@ -236,15 +236,9 @@ function Index() {
           {/* Hero content */}
           <div className="relative h-full container-x flex flex-col justify-center pt-24 pb-48 md:pb-56">
             <div className="max-w-3xl">
-              <p className="inline-flex items-center gap-3 text-gold text-xs sm:text-sm font-medium tracking-[0.25em] uppercase mb-7">
-                <span className="h-px w-10 bg-gold" /> A Foundation for Futures
-              </p>
-              <h1 className="font-display text-cream text-5xl sm:text-6xl md:text-7xl lg:text-[7.5rem] leading-[0.95] font-medium">
-                The Wicker <br /><em className="italic text-gold-soft font-normal">Foundation</em>
+              <h1 className="font-display text-cream text-5xl sm:text-6xl md:text-7xl lg:text-[7.5rem] leading-[0.95] font-medium translate-y-50">
+                The Weaker <br /><em className="italic text-gold-soft font-normal">Arm</em>
               </h1>
-              <p className="mt-8 text-cream/85 text-lg md:text-2xl max-w-xl leading-relaxed font-light">
-                Expanding access to education, opportunity, and brighter futures.
-              </p>
             </div>
           </div>
 
@@ -264,39 +258,41 @@ function Index() {
           className="relative bg-gradient-to-b from-cream-soft/70 via-background to-background pt-[clamp(200px,22vw,300px)] pb-20 md:pb-24"
         >
           {/* Who We Are — premium editorial panel bridging hero & mission */}
-          <div id="about" className="absolute left-0 right-0 top-0 -translate-y-1/2 z-20 container-x pointer-events-none">
+          <div id="about" className="absolute left-0 right-0 top-25 -translate-y-1/2 z-20 container-x pointer-events-none">
             <div className="pointer-events-auto max-w-2xl bg-navy-deep text-cream p-10 md:p-14 lg:p-16 border-t-[3px] border-gold shadow-[0_40px_80px_-20px_rgba(17,17,17,0.45)]">
               <p className="text-xs font-semibold tracking-[0.3em] uppercase text-gold mb-6">Who We Are</p>
               <p className="font-display text-2xl md:text-[1.85rem] leading-[1.35] text-cream">
-                Please add your "Who We Are" statement here. This section will introduce The Wicker Foundation, its mission, the people it serves, and the change it hopes to create through education access.
+                The Weaker Arm Series is a leadership and personal development platform dedicated to helping individuals transform limitations into opportunities for growth, impact, and leadership.
               </p>
             </div>
           </div>
 
           <div className="container-x grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             <div className="lg:col-span-7">
-              <p className="text-sm font-medium tracking-[0.2em] uppercase text-navy/60 mb-6">Our Mission</p>
               <h2 data-reveal className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-navy-deep">
-                We are building a platform that helps learners access the information, guidance, and opportunities they need to pursue education with confidence.
+                The mission is simple:<br />To help people strengthen their weaker arm.
               </h2>
               <div className="mt-10 grid sm:grid-cols-2 gap-8 max-w-2xl">
                 <p className="text-muted-foreground leading-relaxed">
-                  Education changes lives — but only when learners can find the door. Too many young people never see the scholarships, programs, or mentors that could shape their future.
+                  Founded on the belief that setbacks, weaknesses, and perceived inadequacies do not define a person's future, The Weaker Arm Series exists to empower people who have been told they are not ready, not qualified, or not capable of taking the next step in their journey.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Lumen is a quiet, powerful bridge between ambition and access. We make opportunity visible, navigable, and human.
+                  Through thought-provoking stories, practical leadership lessons, mentorship principles, and real-world experiences, the platform equips individuals with the mindset and tools needed to leverage what they already possess and prepare for the opportunities ahead.
                 </p>
               </div>
-              <a href="#" className="mt-10 inline-flex items-center gap-2 link-underline text-navy-deep font-medium">
-                Read our full story <ArrowRight className="h-4 w-4" />
-              </a>
             </div>
-            <div className="lg:col-span-5">
-              <div className="relative">
-                <img src={missionImg} alt="A student smiling in a library" width={1024} height={1280} loading="lazy" className="w-full h-[520px] object-cover rounded-sm" />
+            <div className="lg:col-span-5 lg:translate-y-[-2rem] xl:translate-y-[-6rem]">
+              <div className="relative lg:-mt-28 xl:-mt-36">
+                <video
+                  src="https://firebasestorage.googleapis.com/v0/b/weakerarm-fa8cb.firebasestorage.app/o/the_weaker_arm_original_text_animation.mp4?alt=media&token=458102ca-69a8-4eb3-990b-2cabcc868c2f"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-[520px] lg:h-[680px] xl:h-[760px] object-cover rounded-sm"
+                />
                 <div className="absolute -bottom-6 -left-6 bg-cream border border-border px-6 py-5 max-w-xs shadow-sm">
-                  <p className="font-display text-2xl text-navy-deep leading-tight">"Someone showed me the path. Now I want to show others."</p>
-                  <p className="mt-3 text-xs uppercase tracking-widest text-navy/60">— Amara, 19 · Lumen Member</p>
+                  <p className="font-display text-2xl text-navy-deep leading-tight">Sometimes the thing that appears to be your weakness becomes your greatest advantage.</p>
                 </div>
               </div>
             </div>

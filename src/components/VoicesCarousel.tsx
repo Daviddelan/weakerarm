@@ -23,9 +23,9 @@ const SLIDES: Slide[] = [
     kind: "founder",
     image: founderPortrait,
     quote:
-      "Education should not be a privilege determined by geography, income, or circumstance. Every learner deserves access to opportunities that can transform their future.",
-    author: "Adaeze Okafor",
-    role: "Founder & Executive Director",
+      "It takes the obscure to sustain the obvious. The weaker arm is always doing the heavy lifting. Leaders need to continue adding to their toolbox",
+    author: "Wisdom Kwame Nuworkpor",
+    role: "FCCA, CIA",
   },
   {
     kind: "story",
