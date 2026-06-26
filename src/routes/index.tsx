@@ -236,7 +236,7 @@ function Index() {
           {/* Hero content */}
           <div className="relative h-full container-x flex flex-col justify-center pt-24 pb-48 md:pb-56">
             <div className="max-w-3xl">
-              <h1 className="font-display text-cream text-5xl sm:text-6xl md:text-7xl lg:text-[7.5rem] leading-[0.95] font-medium translate-y-50">
+              <h1 className="font-display text-cream text-5xl sm:text-6xl md:text-7xl lg:text-[7.5rem] leading-[0.95] font-medium translate-y-[clamp(-8rem,-16vh,-4.5rem)] xl:translate-y-50">
                 The Weaker <br /><em className="italic text-gold-soft font-normal">Arm</em>
               </h1>
             </div>
@@ -255,13 +255,13 @@ function Index() {
         {/* Mission section — flows underneath the overlapping Who We Are card */}
         <section
           id="mission"
-          className="relative bg-gradient-to-b from-cream-soft/70 via-background to-background pt-[clamp(200px,22vw,300px)] pb-20 md:pb-24"
+          className="relative bg-gradient-to-b from-cream-soft/70 via-background to-background pt-20 md:pt-24 lg:pt-28 xl:pt-[clamp(200px,22vw,300px)] pb-20 md:pb-24"
         >
           {/* Who We Are — premium editorial panel bridging hero & mission */}
-          <div id="about" className="absolute left-0 right-0 top-25 -translate-y-1/2 z-20 container-x pointer-events-none">
-            <div className="pointer-events-auto max-w-2xl bg-navy-deep text-cream p-10 md:p-14 lg:p-16 border-t-[3px] border-gold shadow-[0_40px_80px_-20px_rgba(17,17,17,0.45)]">
-              <p className="text-xs font-semibold tracking-[0.3em] uppercase text-gold mb-6">Who We Are</p>
-              <p className="font-display text-2xl md:text-[1.85rem] leading-[1.35] text-cream">
+          <div id="about" className="absolute left-0 right-0 bottom-full -translate-y-6 md:-translate-y-8 xl:top-25 xl:bottom-auto xl:-translate-y-1/2 z-20 container-x pointer-events-none">
+            <div className="pointer-events-auto max-w-[34rem] sm:max-w-xl md:max-w-2xl bg-navy-deep text-cream p-7 sm:p-9 md:p-12 xl:p-16 border-t-[3px] border-gold shadow-[0_40px_80px_-20px_rgba(17,17,17,0.45)]">
+              <p className="text-xs font-semibold tracking-[0.3em] uppercase text-gold mb-5 md:mb-6">Who We Are</p>
+              <p className="font-display text-xl sm:text-2xl md:text-[1.85rem] leading-[1.35] text-cream">
                 The Weaker Arm Series is a leadership and personal development platform dedicated to helping individuals transform limitations into opportunities for growth, impact, and leadership.
               </p>
             </div>
