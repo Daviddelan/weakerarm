@@ -206,17 +206,17 @@ export function KeyInsights() {
           </div>
 
           {/* Arrows */}
-          <div className="flex items-center justify-between mt-8 md:mt-10">
+          <div className="flex items-center justify-between gap-4 mt-8 md:mt-10">
             <button
               onClick={prev}
               aria-label="Previous slide"
-              className="h-11 w-11 rounded-full border border-border bg-white flex items-center justify-center text-navy-deep hover:border-gold hover:text-gold transition-colors"
+              className="h-11 w-11 shrink-0 rounded-full border border-border bg-white flex items-center justify-center text-navy-deep hover:border-gold hover:text-gold transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
             </button>
 
             {/* Dots */}
-            <div className="flex items-center gap-2">
+            <div className="flex min-w-0 flex-1 items-center gap-2 overflow-x-auto px-1 py-2 sm:justify-center">
               {Array.from({ length: totalPages }).map((_, i) => (
                 <button
                   key={i}
@@ -235,7 +235,7 @@ export function KeyInsights() {
             <button
               onClick={next}
               aria-label="Next slide"
-              className="h-11 w-11 rounded-full border border-border bg-white flex items-center justify-center text-navy-deep hover:border-gold hover:text-gold transition-colors"
+              className="h-11 w-11 shrink-0 rounded-full border border-border bg-white flex items-center justify-center text-navy-deep hover:border-gold hover:text-gold transition-colors"
             >
               <ArrowRight className="h-4 w-4" />
             </button>

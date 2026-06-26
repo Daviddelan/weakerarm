@@ -71,7 +71,7 @@ export function FeaturedBook() {
     <section className="py-16 md:py-20 bg-gradient-to-b from-background via-cream-soft/40 to-cream-soft/60">
       <div className="container-x">
         {/* Two-column layout */}
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           {/* LEFT — Book cover */}
           <div className="lg:col-span-5 xl:col-span-4">
             <div className="relative max-w-md mx-auto lg:mx-0">
@@ -112,7 +112,7 @@ export function FeaturedBook() {
               <BuyButton href={AMAZON_URL}>Buy on Amazon</BuyButton>
 
               {/* Secondary actions */}
-              <div className="grid sm:grid-cols-2 gap-3 mt-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
                 <SecondaryAction
                   icon={Phone}
                   label="Call to Order"

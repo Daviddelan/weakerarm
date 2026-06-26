@@ -167,7 +167,7 @@ export function VoicesCarousel() {
 function SlideContent({ slide }: { slide: Slide }) {
   if (slide.kind === "founder") {
     return (
-      <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -230,7 +230,7 @@ function SlideContent({ slide }: { slide: Slide }) {
 
   const imageLeft = slide.imageSide !== "right";
   return (
-    <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
       <motion.div
         initial={{ opacity: 0, scale: 0.97 }}
         animate={{ opacity: 1, scale: 1 }}

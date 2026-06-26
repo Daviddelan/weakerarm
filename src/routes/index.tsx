@@ -267,12 +267,12 @@ function Index() {
             </div>
           </div>
 
-          <div className="container-x grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+          <div className="container-x grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             <div className="lg:col-span-7">
               <h2 data-reveal className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-navy-deep">
                 The mission is simple:<br />To help people strengthen their weaker arm.
               </h2>
-              <div className="mt-10 grid sm:grid-cols-2 gap-8 max-w-2xl">
+              <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-2xl">
                 <p className="text-muted-foreground leading-relaxed">
                   Founded on the belief that setbacks, weaknesses, and perceived inadequacies do not define a person's future, The Weaker Arm Series exists to empower people who have been told they are not ready, not qualified, or not capable of taking the next step in their journey.
                 </p>
@@ -304,7 +304,7 @@ function Index() {
       {/* Featured campaign */}
       <section className="bg-navy-deep text-cream py-20 md:py-24">
         <div className="container-x">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="order-2 lg:order-1">
               <p className="text-sm font-medium tracking-[0.2em] uppercase text-gold mb-6">Featured Campaign</p>
               <h2 data-reveal className="font-display text-4xl md:text-5xl lg:text-6xl leading-tight">
@@ -340,7 +340,7 @@ function Index() {
               Our Big Focus Areas
             </h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-px bg-border border border-border">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border border border-border">
             {[
               { n: "01", t: "Opportunity Discovery", d: "Helping students find scholarships, programs, courses, and learning resources that match who they are and where they want to go." },
               { n: "02", t: "Guidance and Mentorship", d: "Connecting learners with advice, role models, and practical next steps from people who have walked the path." },
@@ -371,7 +371,7 @@ function Index() {
               What we're building toward.
             </h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-12 md:gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
             <Metric end={10000} suffix="+" label="Learners to reach in the first phase of our launch." />
             <Metric end={100} suffix="+" label="Education resources to curate, verify, and translate." />
             <Metric end={50} suffix="+" label="Partners, mentors, and contributors to engage worldwide." />
@@ -393,7 +393,7 @@ function Index() {
               View all stories <ArrowRight className="h-4 w-4" />
             </a>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
             {[
               { img: storyScholarship, tag: "Learner Story", title: "The night she found three scholarships she qualified for", excerpt: "How one student turned a Saturday search into a fully funded year of study.", icon: Play },
               { img: storyMentor, tag: "Mentorship", title: "What a good mentor really gives you", excerpt: "Beyond advice — the quiet confidence that comes from someone believing in you.", icon: ArrowRight },
@@ -464,7 +464,7 @@ function Index() {
               All articles <ArrowRight className="h-4 w-4" />
             </a>
           </div>
-          <div className="grid md:grid-cols-3 gap-px bg-border border border-border">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border border border-border">
             {[
               { date: "Jun 04, 2026", cat: "Essay", title: "Why education access begins with information", excerpt: "Information is the first scholarship — and we don't distribute it fairly." },
               { date: "May 22, 2026", cat: "Product", title: "Building a learner-first opportunity platform", excerpt: "Inside the design principles guiding what we ship and what we don't." },
@@ -490,7 +490,7 @@ function Index() {
       {/* Footer */}
       <footer className="bg-navy-deep text-cream pt-20 pb-10">
         <div className="container-x">
-          <div className="grid lg:grid-cols-12 gap-12 mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
             <div className="lg:col-span-4">
               <div className="flex items-center gap-2.5 mb-6">
                 <div className="h-9 w-9 rounded-full bg-cream flex items-center justify-center">
