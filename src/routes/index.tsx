@@ -306,19 +306,19 @@ function Index() {
         <div className="container-x">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="order-2 lg:order-1">
-              <p className="text-sm font-medium tracking-[0.2em] uppercase text-gold mb-6">Featured Campaign</p>
+              <p className="text-sm font-medium tracking-[0.2em] uppercase text-gold mb-6">The Strategy</p>
               <h2 data-reveal className="font-display text-4xl md:text-5xl lg:text-6xl leading-tight">
-                Education Access Starts With <em className="italic text-gold-soft font-normal">Awareness</em>
+                Turn Your Limitations Into <em className="italic text-gold-soft font-normal">Advantages</em>
               </h2>
               <p className="mt-8 text-cream/75 text-lg leading-relaxed max-w-lg">
-                Most students don't lack ambition — they lack information. Our launch campaign is mapping the invisible barriers between learners and the opportunities already meant for them.
+                You don't have to be the smartest person in the room to lead it. Discover how stepping out of your office, embracing your weaknesses, and knowing your staff can elevate your influence.
               </p>
               <a href="#" className="mt-10 inline-flex items-center gap-2 bg-gold text-navy-deep px-7 py-4 rounded-full font-semibold hover:bg-gold-soft transition-all hover:gap-3">
-                Read the Vision <ArrowRight className="h-4 w-4" />
+                Grab A Copy <ArrowRight className="h-4 w-4" />
               </a>
             </div>
             <div className="order-1 lg:order-2">
-              <img src={campaignImg} alt="Students engaging with a world map in a classroom" width={1600} height={1024} loading="lazy" className="w-full h-[480px] object-cover rounded-sm" />
+              <img src={campaignImg} alt="The cover of 'The Value of the Weaker Arm' resting on a desk next to an open notebook and pen" width={1600} height={1024} loading="lazy" className="w-full h-[480px] object-cover rounded-sm" />
             </div>
           </div>
         </div>
